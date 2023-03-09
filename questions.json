@@ -1,0 +1,90 @@
+{
+	"sample": [
+		{
+			"question" : "Pokémon (an abbreviation for \"Pocket Monsters\") is a popular Japanese media franchise created by Satoshi Tajiri in 1996. There are currently 9 generations of Pokémon, but the first generation of 151 Pokémon included Ditto, Jigglypuff, Pichu, and Dragonite.",
+			"answer" : "Pokémon (an abbreviation for \"Pocket Monsters\") is a popular Japanese media franchise created by Satoshi Tajiri in 1996. There are currently 9 generations of Pokémon, but the first generation of 151 Pokémon included Ditto, Jigglypuff, <del>Pichu,</del> and Dragonite.",
+			"explain" : "Pichu is in gen 2. Entry #172 in the Pokédex."
+		}
+	],
+	"shiny": {
+		"Can I Fuck It?" : {
+			"description": "Which one of these dating sim games isnt real?",
+			"images": [
+				{"src": "shiny/dating-sim/0.png", "name": "Panzermadels"},
+				{"src": "shiny/dating-sim/1.png", "name": "Paca Plus"},
+				{"src": "shiny/dating-sim/2.png", "name": "Purrfect Date"},
+				{"src": "shiny/dating-sim/3.png", "name": "John Cena's Sexy High School Adventure"},
+				{"src": "shiny/dating-sim/4.png", "name": "Dream Daddy"},
+				{"src": "shiny/dating-sim/5.png", "name": "I Love You, Ronald"},
+				{"src": "shiny/dating-sim/6.png", "name": "Jurassic Heart"},
+				{"src": "shiny/dating-sim/7.png", "name": "Speed Dating For Ghosts"},
+				{"src": "shiny/dating-sim/8.png", "name": "Hatoful Boyfriend"}
+			],
+			"answer": "\"I love you, Ronald\" is fake. The real game is \"I love you, Colonel Sanders\"",
+			"fake": {"src": "shiny/dating-sim/5.png", "name": "I Love You Ronald"},
+			"real": {"src": "shiny/dating-sim/9.png", "name": "I Love You Colonel Sanders"},
+			"explain": [
+				"Panzermadels: Oops, the school you enrolled in isn't to teach you how to operate a tank, it's a school <em>for</em> tanks. Time to date them.",
+				"Paca Plus: Oops, your highschool girlfriend turned into an alpaca.",
+				"Purrfect Date: A dating sim where you, a human, date cats.",
+				"John Cena's Sexy High School Adventure: Everyone you date is John Cena.",
+				"Dream Daddy: You play as a dad and your goal is to meet and romance other hot dads.",
+				"I Love You, Colonel Sanders: Date your classmate, Colonel Sanders.",
+				"Jurassic Heart: Romance your classmate, a T.Rex.",
+				"Speed Dating For Ghosts: Find companionship and closure in the afterlife.",
+				"Hatoful Boyfriend: You are the only human student at St. PigeoNation’s Institute, a school for talented birds. Might as well romance them."
+			]
+		},
+		"What is wrong with this picture?": {
+			"description": "What is wrong with this picture? Something may be added, something may be removed, something may be changed.",
+			"wrong": "shiny/wrong/mtg.png",
+			"real": "shiny/wrong/mtg_fixed.png",
+			"explain": "The \"Deckmaster\" portion is missing."
+		},
+		"template": {
+			"description" : "",
+			"fake": "",
+			"real": "",
+			"answer": "",
+			"explain": ""
+		}
+	},
+	"Pokemon" : {
+		"easy" : [
+			{
+				"question": "Eevee, the 133rd Pokémon, can evolve into Vaporeon, Electreon, Flareon, Espeon, Umbreon, Leafeon, Glaceon and Sylveon.",
+				"answer": "Eevee, the 133rd Pokémon, can evolve into Vaporeon, <del>Electreon</del> <ins>Jolteon</ins>, Flareon, Espeon, Umbreon, Leafeon, Glaceon and Sylveon.",
+				"explain": "Jolteon, not Electreon."
+			},
+			{
+				"question": "In the \"Pokémon\" TV show, most Pokémon communicate by saying their name over and over again in a way that is definitely not annoying, but there are some exceptions. At least one Meowth can speak like a human, Charizard never says his name, and Mr. Mime doesn't make any sound at all.",
+				"answer": "In the \"Pokémon\" TV show, most Pokémon communicate by saying their name over and over again in a way that is definitely not annoying, but there are some exceptions. At least one Meowth can speak like a human, Charizard never says his name, and <span class='wrong'>Mr. Mime doesn't make any sound at all.</span>",
+				"explain": "Mr. Mime does say his name, in a really annoying and creepy voice."
+			},
+			{
+				"question": "Every Pokémon is classified as at least one of eighteen types, one of the rarest of which is the \"dragon\" type. Weak against ice attacks and other dragon attacks, this type includes Dragonite, Salamence, and Charizard.",
+				"answer": "Every Pokémon is classified as at least one of eighteen types, one of the rarest of which is the \"dragon\" type. Weak against ice attacks and other dragon attacks, this type includes Dragonite, Salamence, and <span class='wrong'>Charizard.</span>",
+				"explain": "Charizard is a fire type, not a dragon type, despite looking very much like a dragon."
+			}
+		],
+		"medium" : [
+			{
+				"question": "While Bulbasaur may be the first Pokémon in the Pokédex, several other Pokémon also have a claim to being first. From Rhydon being the first Pokémon designed by developers, to Mew being the genetic predecessor of all Pokémon, there is also a question of Arceus, who due to his time travel ability could theoretically travel into the distant past to be the first chronological Pokémon.",
+				"answer": "While Bulbasaur may be the first Pokémon in the Pokédex, several other Pokémon also have a claim to being first. From Rhydon being the first Pokémon designed by developers, to Mew being the genetic predecessor of all Pokémon, there is also a question of Arceus, <span class='wrong'>who due to his time travel ability could theoretically travel into the distant past to be the first chronological Pokémon.</span>",
+				"explain": "Arceus does not have the ability to time travel. The actual reason he is in the list of \"first Pokémon\" is because he is the god of all Pokémon."
+			},
+			{
+				"question": "Excluding Pokémon Let's Go Eevee and Pokémon Let's Go Pikachu, every Pokémon game gives you the option to choose one of three \"starter\" Pokémon. Though these starter Pokémon are different in each game, they always have the types fire, water, and grass.",
+				"answer": "Excluding Pokémon Let's Go Eevee and Pokémon Let's Go Pikachu <ins>and Pokémon Yellow</ins>, every Pokémon game gives you the option to choose one of three \"starter\" Pokémon. Though these starter Pokémon are different in each game, they always have the types fire, water, and grass.",
+				"explain": "Pokémon Yellow only lets you choose Pikachu as a starter. Would also accept that some starter pokemon have dual types if you want to be super pedantic."
+			}
+		],
+		"hard" : [
+			{
+				"question": "Unknown (the symbol Pokémon) is a psychic-type Pokémon first discovered in the Ruins of Alph, that is only capable of learning one move: Hidden Power. Unknown's primary appeal is as an alphabet. Though it has no evolutions, this one Pokémon has 26 different forms, one for each letter of the Latin alphabet.",
+				"answer": "Unknown (the symbol Pokémon) is a psychic-type Pokémon first discovered in the Ruins of Alph, that is only capable of learning one move: Hidden Power. Unknown's primary appeal is as an alphabet. Though it has no evolutions, this one Pokémon <span class='wrong'>has 26 different forms</span>, one for each letter of the Latin alphabet.",
+				"explain": "There are actually 28 forms, as question mark and exclamation point forms are included."
+			}
+		]
+	}
+}

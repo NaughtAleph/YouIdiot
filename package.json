@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "pug": "^3.0.2",
+    "pug-lint": "^2.6.0",
+    "socket.io": "^4.6.1"
+  }
+}

@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+	head
+		title Gameshow Contestant
+		script(src='/socket.io/socket.io.js')
+		script(type='text/javascript' src='js/contestant.js')
+		link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous')
+		script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js' integrity='sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN' crossorigin='anonymous')
+		link(rel='stylesheet' href='css/base.css')
+		script(src='https://kit.fontawesome.com/52b02e0810.js' crossorigin='anonymous')
+	body
+		h1(id='title') Contestant
+		div(class='container section' id='setup')
+			div(class='row justify-content-center')
+				div(class='col-4')
+					//- temp value, change password type to password
+					input(type='text' class='form-control' id='name' name='name' placeholder='Your name' value='asdf')
+				div(class='w-100')
+				div(class='col-4')
+					input(type='password' class='form-control' id='password' name='password' placeholder='Room' value='asdf')
+				div(class='w-100')
+				div(class='col-4')
+					button(class='btn btn-secondary w-100 m-0' onclick='joinRoom()') Join Session
+		div(class='container section' id='game' hidden)
+			div(class='row justify-content-center game-section' id='scores')
+				div(class='col-12 section-title') Score
+			div(class='row justify-content-center game-section')
+				div(class='col-4')
+					button(class='btn btn-lg btn-warning w-100 m-0' id='buzzer' onclick='buzz()') BUZZ
+				div(class='w-100')
+				div(class='col-12' id='answerer')
+			div(class='row justify-content-center game-section')
+				div(class='col-12 section-title') Question
+				div(class='col-12' id='question')
+		div(class='container' id='winner-section' hidden)
+			div(class='row justify-content-center game-section')
+				div(class='col-12 section-title m-0' id='winner')
+		script(src='js/confetti.js')
+		canvas(id='confetti-canvas')

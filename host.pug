@@ -1,0 +1,110 @@
+doctype html
+html(lang="en")
+	head
+		title Gameshow Host
+		script(src='/socket.io/socket.io.js')
+		script(type='text/javascript' src='js/host.js')
+		link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous')
+		script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js' integrity='sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN' crossorigin='anonymous')
+		link(rel='stylesheet' href='css/base.css')
+		script(src='https://kit.fontawesome.com/52b02e0810.js' crossorigin='anonymous')
+			
+	body
+		h1(class='title') Condecending Corrections
+		div(class='container section' id='room')
+			div(class='row justify-content-center')
+				div(class='col-4')
+					input(type='text' class='form-control' id='password' name='password' placeholder='Room name'
+					value='asdf')
+				div(class='w-100')
+				div(class='col-4')
+					button(class='btn btn-secondary m-0 w-100' id='create' onclick='createSocket()') Create Room
+		div(class='container section')
+			div(class='row')
+				div(class='col-12')
+					//- details(id='intro' open)
+					details(id='intro')
+						summary(class='sectionTitle') Intro
+						p Congrats on starting your game of "Condecending Corrections" (any similarity to the gameshow "Um, actually" is purely coincidental). Create the room and let your contestants connect.
+						p Read the rules below to the contestants, read the other rules to yourself so you can be a good gameshow host, maybe look at a sample questions after pressing "Begin", and then start the game!
+		div(class='container section')
+			div(class='row')
+				div(class='col-12')
+					//- details(id='rules' open)
+					details(id='rules')
+						summary(class='sectionTitle') Rules
+						details(class='subDetails')
+							summary Read these to the contestants:
+							ul
+								li Every question is incorrect somehow, and it is your job to correct them.
+								li Every correction must be preceded by the phrase "You idiot".
+								li You can interrupt me, the host, at any point to give the correction.
+						details(class='subDetails')
+							summary Rules just for you, the host:
+							ul
+								li You are the person determining if the answer is sufficiently close.
+								li If the contestant correctly identified the part of the statement that is incorrect, but could not give the correction, you can award them the point as long as other contestants can't come up with the correction either.
+								li Make sure they said "You idiot".
+								li You can either have it so not saying "You idiot" means no one gets the point, or so that the next person to buzz and repeat the answer correctly gets the point, whichever you find more fun.
+								li Easy questions should be quick. Medium questions should require some more specific knowledge. Hard questions can be extra pedantic or maybe just very obscure. Shiny questions are a little minigame.
+								li If someone is falling behind and needs more chances at points, change the dropdown menu to categories that they know about before choosing an level of question. This makes sure the next question is in one of their areas of expertise, but does not guarentee that someone else might also know it.
+								li This is a game. Ignore or change the rules however you want it it means it's more fun.
+		div(class='container section' id='setup' hidden)
+			div(class='row')
+				div(class='col-12' id='categories')
+					h4 Select Categories
+					each cat in categories
+						div
+							//- input(type='checkbox' class='form-check-input' id=cat name=cat value=cat)
+							input(type='checkbox' class='form-check-input' id=cat name=cat value=cat)
+							label(class='form-class-label' for=cat)= cat
+				div(class='col-12')
+					div Connected Contestants:
+						ul(id='contestants')
+				div(class='col-12')
+					div(id='error')
+					button(class='btn btn-secondary' id='begin' onclick='beginGame()') Begin!
+
+		div(class='container' id='game' hidden)
+			div(class='row')
+				div(class='col-12')
+					button(id='sampleq' class='btn btn-secondary m-0' onclick='question("sample")') Sample Question
+			div(class='row justify-content-center game-section' id='scores')
+				div(class="col-12 section-title") Scores
+			div(class='row justify-content-center game-section')
+				div(class='col-12 section-title') Questions
+				div(class='col-5')
+					select(class='form-select' name='category' id='category') Category
+						option(value='') Any category
+				div(class='w-100')
+				div(class='col-3 m-t-20')
+					button(class='w-100 btn btn-secondary m-0' onclick='question("easy")') Easy
+				div(class='col-3 m-t-20')
+					button(class='w-100 btn btn-secondary m-0' onclick='question("medium")') Medium
+				div(class='col-3 m-t-20')
+					button(class='w-100 btn btn-secondary m-0' onclick='question("hard")') Hard
+				div(class='col-3 m-t-20')
+					button(class='w-100 btn btn-secondary m-0' onclick='getShinyGames()') Shiny!
+				div(class='col-12 m-t-20' id='shiny-picker' hidden)
+				div(class='col-12 m-t-20' id='shiny-description' hidden)
+			div(class='row justify-content-center game-section' id='buzzers')
+				div(class='col-12 section-title') Buzzers
+				div(class='col-5')
+					ol(id='buzzOrder')
+				div(class='w-100')
+				div(class='col-3 m-b-20')
+					button(class='w-100 btn btn-secondary m-0' onclick='resetBuzzers()') Reset
+			div(class='row game-section')
+				div(class='col-12 section-title') Question
+				div(class='col-12' id='question')
+			div(class='row game-section')
+				div(class='col-12 section-title') Correction
+				div(class='col-12' id='answer')
+			div(class='row game-section')
+				div(class='col-12 section-title') Explanation
+				div(class='col-12' id='explain')
+			div
+				button(class='btn btn-secondary' onclick='emitEndGame()') End Game
+		div(class='container' id='winner-section' hidden)
+			div(class='row justify-content-center game-section')
+				div(class='col-12 section-title m-0' id='winner')
