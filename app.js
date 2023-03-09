@@ -14,7 +14,7 @@ var host = pug.compileFile('host.pug')
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const port = 3000;
+const port = process.env.PORT || 3001;
 
 const username = ''; //'test';
 const password = ''; //'test';
